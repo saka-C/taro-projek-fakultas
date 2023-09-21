@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    /* Color */
+    --body-color: #E4E9E7;
+    --sidebar-color: #242526;
+    --primary-color: #F4B400;
+    --primary-color-light: #F5F6FF;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --btngreen: #2BBF66;
+    --btnblue: #2B66BF;
+    --textbtn: #FFFFFF;
+
+    /* transition */
+    --tran-01: all 0.1s ease;
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-04);
+    
+}
+
+
+/* Navbar
+================================================= */
+.navbar.scrolled a{
+    color: var(--text-color);
+}
+.navbar.scrolled button{
+    color: var(--text-color);
+}
+.navbar.scrolled {
+    background: var(--body-color);
+    transition: var(--tran-04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.navbar.scrolled .line{
+    background-color: var(--text-color);
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: var(--primary-color-light);
+    z-index: 1000; /* Menetapkan indeks-z untuk memastikan navbar tetap di atas konten */
+    transition: background-color 0.3s ease; /* Transisi warna latar belakang ketika di-scroll */
+}
+.nav-tiket{
+    background-color: var(--body-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.nav-tiket .logo-text a,
+.nav-tiket .nav-links a,
+.nav-tiket .profile a,
+.nav-tiket .profile button{
+    color: var(--text-color);
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+.logo-text a {
+    color: var(--primary-color-light);
+}
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo-profession {
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.logo img {
+    margin-left: 15px;
+    max-height: 30px;
+}
+.con-nav-prof{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav-links{
+    margin: 0;
+    gap: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color-light);
+    transition: var(--tran-03);
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+    
+}
+.nav-links a:hover{
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color-light);
+    margin: 3px 0;
+}
+.drop-prof{
+    display: none;
+}
+.profile{
+    margin-right: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+}
+.profile a{
+    font-weight: 700;
+    color: var(--primary-color-light);
+}
+.profile img{
+    padding: 10px;
+    width: 9%;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+/* ... CSS Anda yang sudah ada ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .profile button{
+    color: var(--primary-color-light);
+    margin-left: 10px;
+  }
+  .dropbtn {
+    background: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+@media screen and (max-width: 768px) {
+    
+    .navbar{
+        background-color: var(--body-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .navbar .line{
+        background-color: var(--text-color);
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #dddfdd;
+        
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .nav-links a{
+        color: var(--text-color);
+    }
+    .logo-text a {
+        color: var(--text-color);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+    .profile{
+        display: none;
+    }
+    .drop-prof{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(199, 204, 199);
+    }
+}
+/* Navbar end
+================================================= */
+
+
+/* tiket
+================================================= */
+.ticket-container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 80px;
+}
+.ticket-card {
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color-light);
+    width: 70%;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ticket-id {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    width: 30%;
+    color: var(--primary-color-light);
+}
+
+.ticket-time {
+    color: var(--text-color);
+}
+
+.ticket-name {
+    margin-top: 5px;
+    font-size: 25px;
+}
+.ticket-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ticket-status {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.ticket-location {
+    color: var(--text-color);
+}
+.ticket-issue,
+.ticket-description {
+    margin-top: 15px;
+}
+.ticket-issue{
+    width: 70%;
+}
+.ticket-issue p{
+    font-size: 30px;
+}
+.ticket-issue p,
+.ticket-description p {
+    font-weight: bold;
+}
+
+.issue-text {
+    color: var(--primary-color);
+    margin: 5px 0;
+}
+
+.description-box {
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+@media screen and (max-width: 768px) {
+    .ticket-container{
+        display: flex;
+        align-items: center;
+    }
+    .ticket-card {
+        width: 90%;
+        margin: 10px;
+        margin-bottom: 100px;
+    }
+    .ticket-issue{
+        text-align: center;
+        width: 100%;
+    }
+    .ticket-name {
+        font-size: 19px;
+    }
+}
+/* tiket end
+================================================= */
+
+/* =========== form tiket =========== */
+.form-container h2{
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.container-content-form{
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+.form-container{
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-container .lokasi {
+    display: flex;
+    justify-content: center;
+}
+.form-container .masalah{
+    display: flex;
+    justify-content: center;
+}
+.form-container .lokasi select{
+    padding: 10px;
+    margin: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z' fill='%23444'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    margin: 5px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    resize: none;
+}
+textarea::placeholder{
+    padding: 7px;
+}
+button {
+    display: block;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    background-color: var();
+    color: var(--primary-color-light);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button a{
+    text-decoration: none;
+    color: var(--primary-color-light);
+}
+button:hover {
+    background: #f0b922;
+    }
+
+    .checkbox-label {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    
+    .custom-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 2px solid var(--primary-color);
+        border-radius: 4px;
+    }
+    
+    input[type="checkbox"] {
+        opacity: 0;
+        cursor: pointer;
+    }
+    input[type="checkbox"]:checked + .custom-checkbox::before {
+        content: '\2713';
+        font-size: 12px;
+        font-weight: 1000;
+        color: black;
+        position: absolute;
+        top: 0px;
+        left: 4px;
+    }
+
+@media screen and (max-width: 480px) {
+.container {
+    padding: 10px;
+    max-width: 100%;
+}
+}
+
+/* ====== End Form tiket ====== */
+
+
+/* footer
+================================================= */
+
+.footer {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-weight: bold;
+}
+
+.footer-credit {
+    margin-bottom: 10px;
+    font-size: 13px
+}
+
+.footer-copyright {
+    font-size: 12px;
+}
+.logo-text {
+    text-align: center;
+    display: flex;
+    align-items: end;
+    color: var(--primary-color-light);
+}
+
+.logo-text .name {
+    font-weight: bold;
+    display: block;
+    font-size: 18px;
+}
+
+.logo-text .profesion {
+    font-size: 14px;
+    margin-left: 5px;
+}
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        flex-direction: column;
+    }
+
+    .footer-logo img {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* footer end
+================================================= */

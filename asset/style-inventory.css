@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    /* Color */
+    --body-color: #E4E9E7;
+    --sidebar-color: #242526;
+    --primary-color: #F4B400;
+    --primary-color-light: #F5F6FF;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --btngreen: #2BBF66;
+    --btnblue: #2B66BF;
+    --textbtn: #FFFFFF;
+
+    /* transition */
+    --tran-01: all 0.1s ease;
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-04);
+    
+}
+
+
+/* Navbar
+================================================= */
+.navbar.scrolled a{
+    color: var(--text-color);
+}
+.navbar.scrolled button{
+    color: var(--text-color);
+}
+.navbar.scrolled {
+    background: var(--body-color);
+    transition: var(--tran-04);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.navbar.scrolled .line{
+    background-color: var(--text-color);
+}
+a{
+    text-decoration: none;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: var(--primary-color-light);
+    z-index: 1000; /* Menetapkan indeks-z untuk memastikan navbar tetap di atas konten */
+    transition: background-color 0.3s ease; /* Transisi warna latar belakang ketika di-scroll */
+}
+.nav-tiket{
+    background-color: var(--body-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+.nav-tiket .logo-text a,
+.nav-tiket .nav-links a,
+.nav-tiket .profile a,
+.nav-tiket .profile button{
+    color: var(--text-color);
+}
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+.logo-text a {
+    color: var(--primary-color-light);
+}
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo-profession {
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.logo img {
+    margin-left: 15px;
+    max-height: 30px;
+}
+.con-nav-prof{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav-links{
+    margin: 0;
+    gap: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color-light);
+    transition: var(--tran-03);
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+    
+}
+.nav-links a:hover{
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color-light);
+    margin: 3px 0;
+}
+.drop-prof{
+    display: none;
+}
+.profile{
+    margin-right: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+}
+.profile a{
+    font-weight: 700;
+    color: var(--primary-color-light);
+}
+.profile img{
+    padding: 10px;
+    width: 9%;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+/* ... CSS Anda yang sudah ada ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .profile button{
+    color: var(--primary-color-light);
+    margin-left: 10px;
+  }
+  .dropbtn {
+    background: none;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+
+@media screen and (max-width: 768px) {
+    
+    .navbar{
+        background-color: var(--body-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .navbar .line{
+        background-color: var(--text-color);
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #dddfdd;
+        
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    }
+    .nav-links a{
+        color: var(--text-color);
+    }
+    .logo-text a {
+        color: var(--text-color);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+    .profile{
+        display: none;
+    }
+    .drop-prof{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(199, 204, 199);
+    }
+}
+/* Navbar end
+================================================= */
+
+/* =========================================
+============= GEDUNG CSS ================
+========================================= */
+
+
+/* ====== start gedung ====== */
+
+.centered{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Dua kolom */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    padding: 40px;
+    padding-right: 60px;
+    padding-left: 60px;
+    background-color: var(--body-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.card .ikon{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+.card a{
+    color: var(--text-color);
+    text-decoration: none;  
+    font-size: 20px;
+}
+
+/* Media Query to change the layout when the screen is narrow */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .card a{
+        color: var(--text-color);
+        text-decoration: none;  
+        font-size: 30px;
+    }
+}
+
+/* ====== end gedung ====== */
+
+/* =========================================
+============ GEDUNG CSS END ================
+============================================ */
+
+/* =========================================
+============= DEVICE CSS ===================
+============================================ */
+
+/* ====== start device ====== */
+.centered-device{
+    margin-bottom: 200px;
+}
+.card-device {
+    padding: 40px;
+    padding-right: 70px;
+    padding-left: 70px;
+    background-color: var(--body-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.card-device a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Media Query to change the layout when the screen is narrow */
+@media (max-width: 768px) {
+    
+    .card a{
+        color: var(--text-color);
+        text-decoration: none;  
+        font-size: 30px;
+    }
+}
+/* ====== end device ====== */
+
+/* =========================================
+============= DEVICE CSS END ===============
+============================================ */
+
+/* =========================================
+================= TABLE CSS =================
+============================================ */
+
+
+/* =========== start Table ========== */
+.table-container{
+    display: flex;
+    justify-content: center;
+}
+.container-unit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+    
+.card-unit button{
+    width: 100%;
+    border: none;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #F4B400;
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+  
+
+  
+.search-form {
+    position: relative;
+  }
+.src-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+input[type="text"]
+ {
+    width: 25%;
+    padding: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+.search-button {
+    border: none;
+    background-color: var(--primary-color);
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--primary-color-light);
+    border-radius: 6px;
+    margin-left: 5px;
+    cursor: pointer;
+    width: 40px;
+}
+  
+.search-button img {
+    width: 20px;
+    height: 20px;
+}
+  
+.table-content{
+    width: 80%;
+    overflow-x: auto;
+    padding: 20px;
+    max-height: 500px;
+    border-radius: 10px;
+    background: var(--primary-color-light);
+    box-shadow: 0 3px 5px var(--color-shadow);
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    
+}
+th{
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    padding: 10px;
+}
+
+td {
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+}
+tr:nth-child(odd) td {
+    background-color: var(--primary-color-light);
+}
+
+tr:nth-child(even) td {
+    background-color: #e5e5e5b6;
+}
+
+td a{
+    background-color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: var(--primary-color-light);
+    font-size: 13px;
+    border-radius: 6px;
+}
+td a:hover{
+    background-color: #ebae05;
+}  
+#no{
+    border-radius: 10px 0px 0px 0px;
+}
+#action{
+    border-radius: 0px 10px 0px 0px;
+}
+#no-value{
+    border-left: 2px solid var(--primary-color);
+}
+#ac-value{
+    border-right: 2px solid var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    input[type="text"]{
+    width: 100%;
+    }
+    th, td {
+        padding: 15px;
+    }
+
+    .search-form {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .card-unit button {
+        display: block;
+        margin-bottom: 8px;
+    }
+    .container-unit {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .table-content {
+        width: 97%;
+        padding: 10px;
+        overflow-x: hidden; /* Menambahkan atribut ini */
+    }
+
+    table {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+}
+          
+
+/* =========== End Table ========== */
+
+/* =========================================
+=============== TABLE CSS END ===============
+============================================ */
+
+
+/* =========================================
+============= DETAIL SPEK CSS ===============
+============================================ */
+
+/* =========== start detail spek ========== */
+
+
+.container-detail{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.cards-grid-detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.card-detail {
+    box-shadow: 0 2px 4px var(--color-shadow);
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+    width: 48%; /* Biarkan ruang sedikit untuk jarak antar card */
+    margin-bottom: 100px;
+}
+
+.card-header-detail {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+    margin-left: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body span{
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    justify-content: start;
+    border-radius: 10px;
+    color: var(--primary-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card-body p{   
+    padding-left: 10px;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 16px;
+    display: flex;
+
+
+    justify-content: start;
+}
+.card-body img{
+    width: 50%;
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .cards-grid-detail{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6px;
+    }
+    .card-detail {
+        box-shadow: 0 2px 4px var(--color-shadow);
+        background-color: var(--primary-color-light);
+        border-radius: 8px;
+        width: 90%; /* Biarkan ruang sedikit untuk jarak antar card */
+        margin-bottom: 30px;
+    }
+    .card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+/* =========== end detail spek ========== */
+
+/* =========================================
+=========== DETAIL SPEK CSS END =============
+============================================ */
+
+/* footer
+================================================= */
+
+.footer {
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-weight: bold;
+}
+
+.footer-credit {
+    margin-bottom: 10px;
+    font-size: 13px
+}
+
+.footer-copyright {
+    font-size: 12px;
+}
+.logo-text {
+    text-align: center;
+    display: flex;
+    align-items: end;
+    color: var(--primary-color-light);
+}
+
+.logo-text .name {
+    font-weight: bold;
+    display: block;
+    font-size: 18px;
+}
+
+.logo-text .profesion {
+    font-size: 14px;
+    margin-left: 5px;
+}
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        flex-direction: column;
+    }
+
+    .footer-logo img {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+/* footer end
+================================================= */

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./asset/style-dashboard.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Dashboard Admin</title>
+</head>
+<body>
+    <!-- start Navbar -->
+  <div class="sidebar close">
+    <header>
+        <div class="image-text">
+            <span class="image">
+                <img src="./asset/logoui.png" alt="">
+            </span>
+            <div class="text header-text">
+                <span class="name">Admin</span>
+                <span class="profession">Tim IT Fakultas</span>
+            </div>
+        </div>            
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-link">
+                <li class="nav-link selected">
+                    <a href="#">
+                        <i class='bx bxs-tachometer icon' ></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a class="smooth-transition" href="IAinventory.php">
+                        <i class='bx bxs-printer icon' ></i>
+                        <span class="text nav-text">Perangkat Fakultas</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a class="smooth-transition" href="tambah-data.html">
+                        <i class='bx bx-folder-plus icon'></i>
+                        <span class="text nav-text">Tambah Inventory</span>
+                    </a>
+                </li>
+                <li class="nav-link ">
+                    <a class="smooth-transition" href="notifikasi.html">
+                        <i class='bx bx-comment-error icon '></i> 
+                        <span class="text nav-text">Notifikasi Masalah</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a class="smooth-transition" href="../riwayat/riwayat.html">
+                        <i class='bx bx-history icon'></i> 
+                        <span class="text nav-text">Riwayat</span>
+                    </a>
+                </li>                          
+            </ul>
+        </div>
+        <div class="bottom-content">
+            <li class="">
+                <a href="#">
+                    <i class='bx bx-log-out icon'></i> 
+                    <span class="text nav-text">Log-Out</span>
+                </a>
+            </li>   
+            <li class="mode">
+
+
+            </li>
+        </div>
+    </div>
+</div>
+  <!-- End Navbar -->
+
+  <!-- start Main -->
+<section class="home">
+  <div class="text">Dashboard</div>
+    <div class="dashboard">
+      <div class="card notif">
+        <h2 class="number">10</h2>
+        <p class="name">Notifikasi masuk</p>
+      </div>
+      <div class="card clear">
+        <h2 class="number">5</h2>
+        <p class="name">Masalah selesai</p>
+      </div>
+      <div class="card total">
+        <h2 class="number">40</h2>
+        <p class="name">Total Masalah</p>
+      </div>
+      <div class="card data">
+        <h2 class="number">25</h2>
+        <p class="name">Data Inventory</p>
+      </div>
+
+    </div>
+<!-- ========== info ========= -->
+
+<div class="container-main-info">
+  <div class="dashed-line"></div> <!-- Garis putus-putus di dalam card -->
+  <div class="dashed-line-2"></div> <!-- Garis putus-putus di dalam card -->
+  <div class="main-card">
+    <div class="current-number">
+      <span class="current-number-text">Ticketing Masalah</span>
+      <i class='bx bxs-user-voice icon-dash'></i>
+    </div>
+    <div class="current-number">
+      <span class="current-number-text">Inventory Perangkat</span>
+      <i class='bx bxs-package icon-dash'></i>
+    </div>
+    
+    <div class="current-number">
+      <span class="current-number-text">Report  </span>
+      <i class='bx bxs-report icon-dash'></i>
+    </div>
+  </div>
+  
+</div>
+
+
+<!-- ========== end info ========= -->
+
+
+    <!-- ========== Notif ========= -->
+
+<div class="notifikasi">
+  <div class="text">Notifikasi</div>
+  <div class="notification-container">
+    <table>
+        <tr>
+          <td>John Doe</td>
+          <td>Dosen</td>
+          <td>A-101</td>
+          <td>Network Issue</td>
+          <td>2023-07-31</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-tangani">Tangani</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Mahasiswa</td>
+          <td>B-101</td>
+          <td>Hardware Problem</td>
+          <td>2023-07-30</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-tangani">Tangani</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Felix</td>
+          <td>Pegawai</td>
+          <td>H-204</td>
+          <td>Hardware Problem</td>
+          <td>2023-07-30</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-tangani">Tangani</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Smith</td>
+          <td>Dosen</td>
+          <td>B-202</td>
+          <td>Hardware Problem</td>
+          <td>2023-07-30</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-tangani">Tangani</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>Mahasiswa</td>
+          <td>B-202</td>
+          <td>Hardware Problem</td>
+          <td>2023-07-30</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-tangani">Tangani</button>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ========== end Notif ========= -->
+
+<!-- ================ tiket yg sedang di kerjakan =================== -->
+<div class="line-container">
+  <div class="line">
+    <h1>Tiket sedang di kerjakan</h1>
+    <div><p>.</p></div>
+  </div>
+</div>
+
+<!-- ============================ Tiket =================================
+===========================================================================  -->
+<div class="ticket-container">
+    <div class="ticket-card">
+        <div class="ticket-header">
+            <span class="ticket-id">TICKET #12345</span>
+            <div class="waktu">
+                <span class="ticket-time">10:00 AM</span>
+                <span class="ticket-date">8-8-2023</span>
+            </div>      
+        </div>
+        <div class="ticket-content">
+            <div class="ticket-info">
+                <div class="ticket-staloc">
+                    <h2 class="ticket-name">Muhammad Joshua Emerson Pratama Sihaan</h2>
+                    <p class="ticket-status">Status: Dosen</p>
+                    <p class="ticket-location">Location: Office A</p>
+                </div>
+            </div>
+            <div class="ticket-issue">
+                <p class="issue-text">Masalah Jaringan</p>
+            </div>
+            <div class="ticket-description">
+                <div class="description-box">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam doloribus optio consectetur, repudiandae voluptatibus in nobis laborum temporibus adipisci voluptatum, hic quae. Natus dolor eaque odit iste debitis velit consequatur!The device is not responding when I press the power button. It was working fine yesterday.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ end Tiket =================================
+===========================================================================  -->
+
+<div id="popupContainer" class="popup-selesai">
+  <div class="popup-content">
+    <span class="close-selesai" id="closePopupBtn">&times;</span>
+    <h2>Penyesesaian Masalah</h2>
+    <form id="feedbackForm">
+      <label for="feedback">Tulisakan keterangan:</label>
+      <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+      <button type="submit">selesaikan</button>
+    </form>
+  </div>
+</div>
+
+</section>
+
+  <!-- End Main -->
+  <script src="script-dashboard.js"></script>
+</body>
+</html>
