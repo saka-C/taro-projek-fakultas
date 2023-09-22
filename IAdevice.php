@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['table'])){
-    session_destroy();
+    unset($_SESSION['table']);
     header('Location: IAdevice.php'); // Redirect kembali ke IAdevice setelah menghancurkan session
     exit();
 }
@@ -44,7 +44,7 @@ if(isset($_SESSION['table'])){
                     </a>
                 </li>
                 <li class="nav-link selected">
-                    <a href="IAinventory.php">
+                    <a href="IAdevice.php">
                         <i class='bx bxs-printer icon' ></i>
                         <span class="text nav-text">Perangkat Fakultas</span>
                     </a>

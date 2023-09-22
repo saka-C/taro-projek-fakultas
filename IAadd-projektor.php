@@ -20,7 +20,21 @@ if(isset($_POST['submit'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./asset/style-tambah-dashboard.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>Tmabah PC</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <title>Tmabah projektor</title>
+  <script>
+    $(function() {
+        $("#autocomplete").autocomplete({
+            source: "fetchData.php",
+            select: function(event, ui) {
+                // Set the selected item's ID as the value of the hidden input field
+                $("#selectedItemId").val(ui.item.id);
+            }
+        });
+    });
+  </script>
 </head>
 <body>
     <!-- start Navbar -->
@@ -101,25 +115,12 @@ if(isset($_POST['submit'])){
                     <h3 class="card-title">Informasi Pemilik PC</h3>
                 </div>
                 <div class="card-body">
-                    <span class="judul">Gedung :</span>
-                        <select  name="nama_ged">
-                            <option disabled selected value>Pilih Gedung</option>
-                            <?php 
-                            include "koneksi.php";
-                            $query = "SELECT * FROM gedung";
-                            $sql = mysqli_query($db, $query);
-                            foreach ($sql as $qy){
-                            ?>
-                            <option value="<?php echo $qy['nama_ged'] ?>"><?php echo $qy['nama_ged'] ?></option>
-                             <?php } ?>
-                        </select>
-                    <span class="judul">Lantai :</span>
-                        <input type="text" name="lantai" placeholder="contoh:  1 atau G" autocomplete="off"> 
                     <span class="judul">Ruang :</span>
-                        <input type="text" name="ruang" placeholder="contoh A-101" autocomplete="off">            
+                        <input type="text" name="" id="autocomplete" >
+                        <input type="hidden" name="id_ruang" id="selectedItemId" value="">         
                     
                     
-                        <span class="judul">Unit :</span>
+                    <span class="judul">Unit :</span>
                         <select name="unit">
                             <option disabled selected value>pilih unit sesuai gedung</option>
                             <option value="public">public</option>

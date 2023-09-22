@@ -144,17 +144,15 @@ function unit($data){
 function proyektor($data){
     global $db;
     $kode_br = $data['kode_br'];
-    $nama_ged = $data['nama_ged'];
     $unit = $data['unit'];
-    $lantai = $data['lantai'];
-    $ruang = $data['ruang'];
+    $id_ruang = $data['id_ruang'];
     $brand = $data['brand'];
     $tipe_model = $data['tipe_model'];
     $gambar = upload();
     if(!$gambar){
         return false;
     }
-    $query = "INSERT INTO proyektor VALUES('$kode_br','$nama_ged','$lantai', '$ruang', '$unit', '$brand', '$tipe_model', '$gambar')";
+    $query = "INSERT INTO proyektor VALUES('$kode_br', '$id_ruang', '$unit', '$brand', '$tipe_model', '$gambar')";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
@@ -163,10 +161,8 @@ function proyektor($data){
 function updatePy($data){
     global $db;
     $kode_br = $data['kode_br'];
-    $nama_ged = $data['nama_ged'];
+    $id_ruang = $data['id_ruang'];
     $unit = $data['unit'];
-    $lantai = $data['lantai'];
-    $ruang = $data['ruang'];
     $brand = $data['brand'];
     $tipe_model = $data['tipe_model'];
     $gambarLama = $data['gambarLama'];
@@ -176,14 +172,22 @@ function updatePy($data){
         $gambar = upload();
     }
 
-    $query = "UPDATE proyektor SET nama_ged='$nama_ged', lantai='$lantai', ruang='$ruang', unit='$unit', brand='$brand', tipe_model='$tipe_model', gambar='$gambar' WHERE kode_br='$kode_br'";
+    $query = "UPDATE proyektor SET  id_ruang='$id_ruang', unit='$unit', brand='$brand', tipe_model='$tipe_model', gambar='$gambar' WHERE kode_br='$kode_br'";
     mysqli_query($db, $query);
 
     return mysqli_affected_rows($db);
 }
 
-function no_resubmit()
-	{
+function hapusPro($data){
+    global $db;
+    $kode_br = $data['kode_br'];
+    $query = "DELETE FROM proyektor WHERE kode_br='$kode_br'";
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
+}
+
+
+function no_resubmit(){
 		?>
 
 			<script>
@@ -193,5 +197,5 @@ function no_resubmit()
 			</script>
 
 		<?php 
-	}
+}
 ?>

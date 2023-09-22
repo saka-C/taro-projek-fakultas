@@ -1,23 +1,17 @@
-<?php
-include "koneksi.php";
-require 'functions.php';
-if(isset($_POST['hapus'])){
-    if(hapusPc($_POST) > 0){
-        echo "<script> alert('Berhasil Hapus');
-       </script>";
-    }else{
-        echo "<script> alert('gagal');
-        </script>";
-    }
-}
-?>
 <?php 
 include_once 'Pagination.class.php'; 
 // Include database configuration file 
 require_once 'koneksi.php'; 
+require 'functions.php';
 require_once 'functiontable.php';
 
 session_start();
+if(isset($_SESSION['kode_br'])){
+    unset($_SESSION['kode_br']);
+    header('Location: IAtable.php'); // Redirect kembali ke IAdevice setelah menghancurkan session
+    
+}
+
 
 if(isset($_POST['table'])) {
     $_SESSION['table'] = $_POST['table'];
@@ -30,11 +24,25 @@ if(isset($_POST['tipe'])) {
 $tipe = isset($_SESSION['tipe']) ? $_SESSION['tipe'] : '';
 
 $table = $_SESSION['table'];
+if (isset($_POST['hapus'])) {
+    $success = false;
+    if ($table == 'pc') {
+        $success = hapusPc($_POST);
+    } else if ($table == 'projek') {
+        $success = hapusPro($_POST);
+    }
 
-if(!isset($table)) {
-    header('Location: IAdevice.php');
-    exit();
+    if ($success) {
+        echo "<script> alert('Berhasil Hapus');</script>";
+    } else {
+        echo "<script> alert('gagal');</script>";
+    }
 }
+
+// if(!isset($table)) {
+//     header('Location: IAdevice.php');
+//     exit();
+// }
 no_resubmit();
 
 $query_unit = mysqli_query($db, "SELECT * FROM unit");
@@ -115,7 +123,7 @@ $limit = 5;
                     </a>
                 </li>
                 <li class="nav-link selected">
-                    <a href="IAinventory.php">
+                    <a href="IAdevice.php">
                         <i class='bx bxs-printer icon' ></i>
                         <span class="text nav-text">Perangkat Fakultas</span>
                     </a>
