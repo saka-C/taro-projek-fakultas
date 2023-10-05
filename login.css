@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    /* Color */
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #CFA200;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --text-color-light: #9c9c9c;
+    --btngreen: #2BBF66;
+    --btnblue-light: #00C4FF;
+    --btnblue: #068FFF;
+    --textbtn: #FFFFFF;
+
+    /* transition */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--body-color);
+    margin: 30px;
+}
+
+.login-card {
+    background-color: var(--primary-color-light);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+}
+.login-card .logo{
+    position: relative;
+}
+.login-card .image{
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+}
+.login-card .logo .image-text{
+    display: flex;
+    justify-content: center;
+}
+.login-card .logo .image img{
+    width: 38px;
+}
+.login-card .logo .text-logo{
+    display: flex;
+    flex-direction: column;
+}
+.text-logo .name{
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 15px;
+}
+.text-logo .profession{
+    color: var(--text-color);
+    font-size: 13px;
+    margin-top: -2px;
+}
+.login-card h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background: var(--primary-color-light);
+}
+input::placeholder{
+    color: var(--text-color-light);
+}
+input:focus{
+    outline: none;
+    border-color: var(--btngreen);
+    box-shadow: 0 0 5px var(--btngreen);
+}
+/* Gaya dasar untuk input select */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  /* Menghilangkan arrow default pada input select di beberapa browser */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  /* Gaya ketika input select aktif (focus) */
+  select:focus {
+    outline: none;
+    border-color: var(--btngreen);
+    box-shadow: 0 0 5px var(--btngreen);;
+  }
+  
+  /* Gaya ketika input select memiliki opsi yang dipilih */
+  select option:checked {
+    background-color: var(--primary-color);;
+    color: var(--primary-color-light);
+  }
+  
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+p{
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    color: var(--btnblue);
+    text-decoration: none;
+    font-weight: 600;
+}
+a:hover{
+    color: var(--btnblue-light);
+    text-decoration: underline;   
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.success {
+    background-color: #c7ffd8;
+    color: #2b9e46;
+    border: 1px solid #2b9e46;
+}
+
+.error {
+    background-color: #fcd9d9;
+    color: #c62828;
+    border: 1px solid #c62828;
+}
+
+
+/* Responsiveness for mobile */
+@media only screen and (max-width: 600px) {
+    .login-card {
+        max-width: 300px;
+    }
+}

@@ -1,7 +1,7 @@
 $(document).ready(function() {
     function loadNotifications() {
         $.ajax({
-            url: "data_notif.php",
+            url: "data_notiftampil.php",
             type: "GET",
             dataType: "json",
             success: function(response) {
@@ -17,7 +17,7 @@ $(document).ready(function() {
                         <div class="notification-no">${notification.id_report}</div>
                         <div class="short">
                             <div class="notification-name">${notification.nama}</div>
-                            <div class="notification-info">${notification.nama_ruangan} || ${notification.gedung}</div>
+                            <div class="notification-info">${notification.lokasi} || ${notification.posisi}</div>
                         </div>
                         <div class="notification-actions">
                             <button class="btn-tangani" onclick="showDetail('${notification.nama}', '${notification.pelapor}', '${notification.jenis}', '${notification.lokasi}', '${notification.posisi}')">Tangani</button>

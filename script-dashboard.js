@@ -38,49 +38,35 @@ const body = document.querySelector("body"),
 // =========================== SELESAI JS ===========================
 
 
-  function showDetail(name, status, kendala, lokasi, ruangan) {
-    const popupDetail = document.getElementById('popupDetail');
-    popupDetail.innerHTML = `
-      Detail Informasi:<br>
-      Nama: ${name}<br>
-      Status: ${status}<br>
-      Kendala: ${kendala}<br>
-      Lokasi Gedung: ${lokasi}<br>
-      Ruangan: ${ruangan}
-    `;
-
-    const popup = document.getElementById('popup');
-    popup.style.display = 'block';
-  }
-
-  function closePopup() {
-    const popup = document.getElementById('popup');
-    popup.style.display = 'none';
-  }
-
-
-  function submitForm(event) {
-    event.preventDefault();
-    const namaTenagaKerja = document.getElementById('namaTenagaKerja').value;
-    if (namaTenagaKerja) {
-      alert(`Kendala akan ditangani oleh: ${namaTenagaKerja}`);
-      closePopup();
-    }
-  }
-
-
-  const showPopupBtn = document.getElementById("showPopupBtn");
-  const closePopupBtn = document.getElementById("closePopupBtn");
-  const popupContainer = document.getElementById("popupContainer");
-  const feedbackForm = document.getElementById("feedbackForm");
   
-  showPopupBtn.addEventListener("click", () => {
-    popupContainer.style.display = "flex";
-  });
+
+
+
+  // function submitForm(event) {
+  //   event.preventDefault();
+  //   var namaTenagaKerjaInput = document.getElementById('namaTenagaKerja');
+  //   var namaTenagaKerja = namaTenagaKerjaInput.value;
+  //   var selectedIdReport = document.getElementById('ideport');
+  //   var idReport = selectedIdReport.value;
+  //   // Perform any AJAX request or processing here
+  //   // For now, let's just update the popupDetail div
+  //   var popupDetail = document.getElementById('popupDetail');
+  //   popupDetail.innerHTML = 'Detail: ' + namaTenagaKerja + ', ID Report: ' + idReport;
+  // }
+
+
+  // const showPopupBtn = document.getElementById("showPopupBtn");
+  // const closePopupBtn = document.getElementById("closePopupBtn");
+  // const popupContainer = document.getElementById("popupContainer");
+  // const feedbackForm = document.getElementById("feedbackForm");
   
-  closePopupBtn.addEventListener("click", () => {
-    popupContainer.style.display = "none";
-  });
+  // showPopupBtn.addEventListener("click", () => {
+  //   popupContainer.style.display = "flex";
+  // });
+  
+  // closePopupBtn.addEventListener("click", () => {
+  //   popupContainer.style.display = "none";
+  // });
   
   feedbackForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -90,4 +76,3 @@ const body = document.querySelector("body"),
     popupContainer.style.display = "none";
   });
   
-

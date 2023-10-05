@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+    /* Color */
+    --body-color: #E4E9E7;
+    --sidebar-color: #242526;
+    --primary-color: #F4B400;
+    --primary-color-light: #F5F6FF;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --btngreen: #2BBF66;
+    --btnblue: #2B66BF;
+    --textbtn: #FFFFFF;
+
+    /* transition */
+    --tran-01: all 0.1s ease;
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-04);
+    
+}
+
+
+/* ========== navbar ============ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--body-color);
+    transition: background-color 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+
+}
+.navbar a{
+    color: var(--text-color);
+}
+
+
+.logo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo-profession {
+    margin-left: 4px;
+    font-size: 16px;
+}
+
+.logo img {
+    margin-left: 15px;
+    max-height: 30px;
+}
+
+.navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    text-align: center;
+
+}
+
+.navbar-center a {
+    text-decoration: none;
+    padding: 15px;
+    font-weight: bold;
+    transition: var(--tran-04);
+}
+.navbar-center a:hover{
+    background: var(--primary-color);
+    color: var(--primary-color-light);
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar-toggle{
+    display: none;
+}
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar-center {
+        display: flex;
+        flex-direction: column;
+      }
+    
+}
+
+
+/* ========== end navbar ============ */
+
+
+.content {
+    margin-top: 70px;
+    padding: 20px;
+}
+/* =========== form start =========== */
+h2{
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.form-container{
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--primary-color-light);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-container .lokasi {
+    display: flex;
+    justify-content: center;
+}
+.form-container .masalah{
+    display: flex;
+    justify-content: center;
+}
+.form-container .lokasi select{
+    padding: 10px;
+    margin: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z' fill='%23444'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    border-radius: 6px;
+    margin: 5px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    resize: none;
+}
+button {
+    display: block;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    background-color: var();
+    color: var(--text-color);
+    background: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+button a{
+    text-decoration: none;
+    color: var(--primary-color-light);
+}
+button:hover {
+    background: #f0b922;
+    }
+
+    .checkbox-label {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    
+    .custom-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 2px solid var(--primary-color);
+        border-radius: 4px;
+    }
+    
+    input[type="checkbox"] {
+        opacity: 0;
+        cursor: pointer;
+    }
+    input[type="checkbox"]:checked + .custom-checkbox::before {
+        content: '\2713';
+        font-size: 12px;
+        font-weight: 1000;
+        color: black;
+        position: absolute;
+        top: 0px;
+        left: 4px;
+    }
+
+@media screen and (max-width: 480px) {
+.container {
+    padding: 10px;
+    max-width: 100%;
+}
+}
+
+/* ====== End Form ====== */
+
+/* ============== card berhasil =============  */
+.sucsses-container {
+
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card-sucsses {
+    margin-top: 100px;
+    background-color: var(--primary-color-light);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title-sucsses {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 3px solid #2BBF66;
+    background-color: #8df7b7;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .title-sucsses span{
+    color: #2BBF66;
+  }
+  
+  .title-antrian {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .tombol{
+    margin-top: 20px;
+  }
+
+  .tombol a {
+
+    background-color: var(--primary-color);
+    color: var(--primary-color-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  /* Responsiveness */
+  @media screen and (max-width: 480px) {
+    .card-sucsses {
+      padding: 10px;
+    }
+  
+    .no-antrian {
+      font-size: 30px;
+    }
+  
+    .tombol a {
+      padding: 8px 16px;
+    }
+  }
+  
+
+/* ============== card berhasil =============  */
+
+/* ============= footer =============== */
+
+
+.footer {
+    background-color: #252525;
+    color: var(--body-color);
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 25px; 
+    margin-right: 6px;
+}
+
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logo-profession {
+    font-size: 14px;
+}
+
+.footer-credits p {
+    color: var(--text-color);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.footer-copyright p {
+    color: var(--text-color);
+    font-size: 12px;
+    margin-top: 20px;
+}
+/* ================== end footer =============== */
